@@ -35,7 +35,7 @@ endfor
 set nocompatible
 filetype off
 set rtp+=~/.vim_config/bundle/Vundle.vim
-call vundle#begin()
+call vundle#begin('~/.vim_config/bundle')
 source ~/.vim_config/rc/plugins/vundle.vim
 call vundle#end()
 filetype plugin indent on
