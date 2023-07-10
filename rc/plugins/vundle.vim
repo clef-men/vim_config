@@ -1,9 +1,3 @@
-set nocompatible
-filetype off
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'vim-airline/vim-airline'
@@ -34,6 +28,3 @@ Plugin 'whonore/Coqtail'
 Plugin 'derekelkins/agda-vim'
 
 Plugin 'lervag/vimtex'
-
-call vundle#end()
-filetype plugin indent on

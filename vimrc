@@ -32,21 +32,28 @@ for tool in s:opam_packages
 endfor
 " ## end of OPAM user-setup addition for vim / base ## keep this line
 
-source ~/.vim/rc/haskell.vim
-source ~/.vim/rc/keybindings.vim
-source ~/.vim/rc/ocaml.vim
-source ~/.vim/rc/statusline.vim
-source ~/.vim/rc/plugins/agda-vim.vim
-source ~/.vim/rc/plugins/ale.vim
-source ~/.vim/rc/plugins/cmake4vim.vim
-source ~/.vim/rc/plugins/coqtail.vim
-source ~/.vim/rc/plugins/cpp-modern.vim
-source ~/.vim/rc/plugins/nerdtree.vim
-source ~/.vim/rc/plugins/vim-airline.vim
-source ~/.vim/rc/plugins/vim-commentary.vim
-source ~/.vim/rc/plugins/vim-localvimrc.vim
-source ~/.vim/rc/plugins/vundle.vim
-source ~/.vim/rc/plugins/latex-unicoder.vim
+set nocompatible
+filetype off
+set rtp+=~/.vim_config/bundle/Vundle.vim
+call vundle#begin()
+source ~/.vim_config/rc/plugins/vundle.vim
+call vundle#end()
+filetype plugin indent on
+
+source ~/.vim_config/rc/plugins/agda-vim.vim
+source ~/.vim_config/rc/haskell.vim
+source ~/.vim_config/rc/keybindings.vim
+source ~/.vim_config/rc/ocaml.vim
+source ~/.vim_config/rc/statusline.vim
+source ~/.vim_config/rc/plugins/ale.vim
+source ~/.vim_config/rc/plugins/cmake4vim.vim
+source ~/.vim_config/rc/plugins/coqtail.vim
+source ~/.vim_config/rc/plugins/cpp-modern.vim
+source ~/.vim_config/rc/plugins/nerdtree.vim
+source ~/.vim_config/rc/plugins/vim-airline.vim
+source ~/.vim_config/rc/plugins/vim-commentary.vim
+source ~/.vim_config/rc/plugins/vim-localvimrc.vim
+source ~/.vim_config/rc/plugins/latex-unicoder.vim
 
 set showcmd
 set clipboard=unnamed
