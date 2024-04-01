@@ -7,7 +7,7 @@ let s:opam_configuration = {}
 function! OpamConfOcpIndent()
   execute "set rtp^=" . s:opam_share_dir . "/ocp-indent/vim"
 endfunction
-" let s:opam_configuration['ocp-indent'] = function('OpamConfOcpIndent')
+let s:opam_configuration['ocp-indent'] = function('OpamConfOcpIndent')
 
 function! OpamConfOcpIndex()
   execute "set rtp+=" . s:opam_share_dir . "/ocp-index/vim"
@@ -20,13 +20,12 @@ function! OpamConfMerlin()
 endfunction
 let s:opam_configuration['merlin'] = function('OpamConfMerlin')
 
-" let s:opam_packages = ["ocp-indent", "ocp-index", "merlin"]
 let s:opam_packages = ["ocp-index", "merlin"]
-let s:opam_check_cmdline = ["opam list --installed --short --safe --color=never"] + s:opam_packages
-let s:opam_available_tools = split(system(join(s:opam_check_cmdline)))
+let s:opam_available_tools = []
 for tool in s:opam_packages
   " Respect package order (merlin should be after ocp-index)
-  if count(s:opam_available_tools, tool) > 0
+  if isdirectory(s:opam_share_dir . "/" . tool)
+    call add(s:opam_available_tools, tool)
     call s:opam_configuration[tool]()
   endif
 endfor
