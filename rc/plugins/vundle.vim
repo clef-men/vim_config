@@ -30,3 +30,5 @@ Plugin 'whonore/Coqtail'
 Plugin 'derekelkins/agda-vim'
 
 Plugin 'lervag/vimtex'
+
+Plugin 'ziglang/zig.vim'
