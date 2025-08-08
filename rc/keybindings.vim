@@ -56,10 +56,14 @@ noremap : m
 noremap M £
 " ù -> "
 noremap ù "
-" = -> ma
-noremap = ma
-" + -> `a
-noremap + `azz
+" = -> mg
+noremap = mg
+" + -> `g
+noremap + `gzz
+" % -> m
+noremap % m
+" <tab> -> `
+noremap <tab> `
 
 " <cr> -> [insert cr]
 noremap <cr> i<cr><esc>
@@ -71,6 +75,7 @@ noremap <leader>x :x<cr>
 noremap <leader>Q :qall<cr>
 noremap <leader>y "0y
 noremap <leader>p "0p
+noremap <leader>k :noh<cr>
 
 " tab bindings
 noremap <c-o> :tabnew<space>
@@ -118,3 +123,9 @@ noremap ù§ "6
 noremap ùè "7
 noremap ù! "8
 noremap ùç "9
+
+" terminal
+noremap <leader><leader> :tab ter<cr>
+tnoremap kj <c-w>N
+tnoremap <c-j> <c-w>N:tabp<cr>
+tnoremap <c-k> <c-w>N:tabn<cr>

@@ -62,11 +62,11 @@ set mouse=a
 " noremap <ScrollWheelDown> <c-e>
 " noremap <ScrollWheelUp> <c-y>
 
-fun! TrimWhitespace()
+fun! TrimWhitespace() abort
     let l:save = winsaveview()
     keeppatterns %s/\s\+$//e
     call winrestview(l:save)
 endfun
 au BufWritePre * :call TrimWhitespace()
 
-set noexpandtab
+set expandtab tabstop=2 shiftwidth=2
